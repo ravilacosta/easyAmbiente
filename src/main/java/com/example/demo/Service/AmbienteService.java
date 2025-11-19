@@ -3,6 +3,7 @@ package com.example.demo.Service;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.DTO.AmbienteDTO;
+import com.example.demo.DTO.ReservaDTO;
 import com.example.demo.Entity.Ambiente;
 import com.example.demo.Repository.AmbienteRepository;
 
@@ -25,7 +26,6 @@ public class AmbienteService extends BaseService<Ambiente, AmbienteDTO>{
 
         super.delete(id);        
     }
-
 
 
 }
