@@ -22,12 +22,6 @@ public class RecursoService extends BaseService <Recurso, RecursoDTO> {
         super(repository);
         this.repository = repository;
     }
-
-     @GetMapping("/recurso/listagem/{recursoid}")
-    public List<AmbienteDTO> informarRecurso(
-            @PathVariable("recursoId") Long recursoId) {
-        return service.informarRecurso(recursoId);
-    }
     
      
 

@@ -17,17 +17,22 @@ import com.example.demo.Service.AmbienteService;
 @RequestMapping("/ambientes")
 public class AmbienteController extends BaseController<AmbienteDTO> {
 
+    private AmbienteService service;
+
     protected AmbienteController(AmbienteService service){
         super(service);
+        this.service = service;
     }
 
 
-    @RequestMapping("/recurso/{ambienteId}/{recursoId}")
-    public RecursoDTO create(RecursoDTO dto) {
-        // Verificar se o id existe
-      Recurso = RecursoRepository.findById(dto.getRecurso().getId())
-                .orElseThrow(() -> new IllegalStateException("O ID não existe."));
+    @GetMapping("/recurso/{ambienteId}/{recursoId}")
+    public void adicionarRecurso(@PathVariable Long ambienteId, @PathVariable Long recursoId){
+        service.adicionarRecurso(ambienteId, recursoId);
 
-   
-}
+    }     
+   @GetMapping("/recursos/listagem/{recursoid}")
+    public List<AmbienteDTO> listagemPorRecurso(
+            @PathVariable Long recursoId) {
+        return service.listagemPorRecurso(recursoId);
+    }
 }

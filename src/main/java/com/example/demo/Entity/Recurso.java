@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode(callSuper = false)
 
 public class Recurso extends BaseEntity {
-    private String id;
+    
 
     @Column(nullable = false)
     private String nome;

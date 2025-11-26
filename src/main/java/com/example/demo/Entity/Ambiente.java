@@ -1,7 +1,10 @@
 package com.example.demo.Entity;
 
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -27,5 +30,8 @@ public class Ambiente extends BaseEntity {
 
     @Column(nullable = false)
     private int capacidade = 1;
+
+    @ManyToMany
+    private List<Recurso> recursos;
 
 }
